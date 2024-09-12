@@ -10,7 +10,7 @@ export class UserService {
   constructor(private _http: HttpClient) {}
 
   login(data:any){
-    return this._http.post<any>(`${environment.api}/api/authentication/login`,data);
+    return this._http.post<any>(`${environment.api}auth`,data);
   }
 
   logoutUser() {

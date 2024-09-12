@@ -26,18 +26,19 @@ export class LoginComponent {
   loading : boolean = false;
   constructor(private fb: FormBuilder,private user_service: UserService, private router: Router){
     this.login_form = this.fb.group({
-      username: ['',[Validators.required, Validators.email]],
-      password: ['',[Validators.required]]
+      username: ['john2@gmail.com',[Validators.required, Validators.email]],
+      password: ['johnJjones',[Validators.required]]
     });
   }
 
   login(): void {
     this.loading = true;
+    console.log(this.login_form.value);
     if (this.login_form.valid) {
       this.user_service.login(this.login_form.value).subscribe({
         next: (res: any) => {
           this.loading = false;
-          sessionStorage.setItem('tkn', res.jwtToken);
+          sessionStorage.setItem('token', res.jwtToken);
           this.router.navigate(['/dashboard']);
         },
         error: (err: any) => {
