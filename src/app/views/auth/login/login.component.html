@@ -1,0 +1,33 @@
+<div class="container">
+  <mat-card>
+    <!-- <ngx-loading
+          [show]="loading"
+          [config]="{ animationType: ngxLoadingAnimationTypes.circleSwish,
+            backdropBackgroundColour: 'rgba(255,255,255,0.3)',
+            primaryColour: '#4CAF50', secondaryColour: '#4CAF50', tertiaryColour: '#ffffff' }"
+          ></ngx-loading> -->
+    <form action="" [formGroup]="login_form">
+      <mat-form-field floatLabel="always">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="" formControlName="username" required />
+        @if (login_form.get("username")?.errors) {
+        <mat-error>username is required</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field floatLabel="always">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder=""
+          type="password"
+          formControlName="password"
+          required
+        />
+        @if (login_form.get("password")?.errors) {
+        <mat-error>password required</mat-error>
+        }
+      </mat-form-field>
+      <button mat-raised-button (click)="login()">Login</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,20 @@
+<mat-toolbar style="height: 10%">
+  <button mat-button [matMenuTriggerFor]="books_menu">
+    Books
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="unitsMenu">Units</button>
+
+</mat-toolbar>
+
+<mat-menu #books_menu="matMenu">
+  <button mat-menu-item routerLink="applications/manage">Manage</button>
+</mat-menu>
+<mat-menu #unitsMenu="matMenu">
+  <button mat-menu-item routerLink="units/manage">Manage Units</button>
+  <button mat-menu-item routerLink="unit-types/manage">
+    Manage Unit Types
+  </button>
+</mat-menu>
+<<router-outlet></router-outlet>
+
