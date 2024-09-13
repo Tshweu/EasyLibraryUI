@@ -37,7 +37,7 @@ export class LoginComponent {
       this.user_service.login(this.login_form.value).subscribe({
         next: (res: any) => {
           this.loading = false;
-          sessionStorage.setItem('token', res.jwtToken);
+          sessionStorage.setItem('token', res.token);
           this.router.navigate(['views/dashboard']);
         },
         error: (err: any) => {
