@@ -1,13 +1,21 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './views/auth/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
+import { authCanActivateGuard } from '../guards/auth-can-activate.guard';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { ViewsComponent } from './views/views.component';
 
 export const routes: Routes = [
-  // { path: 'users/manage',component: ManageUsersComponent,canActivate: [authCanActivateGuard], canActivateChild: [authCanActivateChildGuard]  },
-  // { path: 'users/manage/view/:id',component: ViewApplicantComponent,canActivate: [authCanActivateGuard], canActivateChild: [authCanActivateChildGuard]  },
-  // { path: 'contracts/manage',component: ManageContractsComponent,canActivate: [authCanActivateGuard], canActivateChild: [authCanActivateChildGuard]  },
-  // { path: 'contracts/templates',component: ContractTemplatesComponent,canActivate: [authCanActivateGuard], canActivateChild: [authCanActivateChildGuard]  },
-  // { path: 'contracts/templates/create',component: ViewContractTemplateComponent,canActivate: [authCanActivateGuard], canActivateChild: [authCanActivateChildGuard]  },
-  // { path: 'contracts/templates/view/:id',component: ViewContractTemplateComponent,canActivate: [authCanActivateGuard], canActivateChild: [authCanActivateChildGuard]  },
+ {
+    path: 'views',
+    component: ViewsComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [authCanActivateGuard],
+      },
+    ],
+  },
   { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: '/login'},
+  { path: '**', redirectTo: '/login' },
 ];

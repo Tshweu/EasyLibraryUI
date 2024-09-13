@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule} from '@angular/material/menu';
 import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-views',
@@ -12,6 +13,7 @@ import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angul
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
+    MatButtonModule,
     RouterModule
   ],
   templateUrl: './views.component.html',
