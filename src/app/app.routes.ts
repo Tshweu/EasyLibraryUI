@@ -5,22 +5,26 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { ViewsComponent } from './views/views.component';
 import { authCanActivateChildGuard } from '../guards/auth-can-activate-child.guard';
 import { ManageBooksComponent } from './views/books/manage-books/manage-books.component';
+import { CreateBookComponent } from './views/books/create-book/create-book.component';
 
 export const routes: Routes = [
  {
     path: 'views',
     component: ViewsComponent,
+    canActivate: [authCanActivateGuard],
     canActivateChild: [authCanActivateChildGuard],
     children: [
       {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate: [authCanActivateGuard],
       },
       {
         path: 'books/manage',
         component: ManageBooksComponent,
-        canActivate: [authCanActivateGuard],
+      },
+      {
+        path: 'books/create',
+        component: CreateBookComponent,
       },
     ],
   },

@@ -1,5 +1,5 @@
 <div class="container">
-  <button mat-raised-button [routerLink]="['views/book']" >Add new book</button>
+  <button mat-raised-button routerLink="/views/books/create" >Add new book</button>
   <mat-form-field>
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
