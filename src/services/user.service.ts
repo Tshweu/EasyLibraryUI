@@ -14,17 +14,16 @@ export class UserService {
   }
 
   logoutUser() {
-    sessionStorage.removeItem('admin-token');
-    sessionStorage.removeItem('adminemail');
-    sessionStorage.removeItem('admin-role');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('email');
   }
 
   loggedIn() {
-    return !!sessionStorage.getItem('admin-token');
+    return !!sessionStorage.getItem('token');
   }
 
   getToken() {
-    return sessionStorage.getItem('admin-token');
+    return sessionStorage.getItem('token');
   }
 
   getUsers() {

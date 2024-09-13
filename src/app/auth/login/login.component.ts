@@ -4,7 +4,7 @@ import { MatButton } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { UserService } from '../../../../services/user.service';
+import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -33,13 +33,12 @@ export class LoginComponent {
 
   login(): void {
     this.loading = true;
-    console.log(this.login_form.value);
     if (this.login_form.valid) {
       this.user_service.login(this.login_form.value).subscribe({
         next: (res: any) => {
           this.loading = false;
           sessionStorage.setItem('token', res.jwtToken);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['views/dashboard']);
         },
         error: (err: any) => {
           this.loading = false;
