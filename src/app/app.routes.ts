@@ -6,6 +6,7 @@ import { ViewsComponent } from './views/views.component';
 import { authCanActivateChildGuard } from '../guards/auth-can-activate-child.guard';
 import { ManageBooksComponent } from './views/books/manage-books/manage-books.component';
 import { CreateBookComponent } from './views/books/create-book/create-book.component';
+import { ManageTransactionsComponent } from './views/transactions/manage-transactions/manage-transactions.component';
 
 export const routes: Routes = [
  {
@@ -25,6 +26,10 @@ export const routes: Routes = [
       {
         path: 'books/create',
         component: CreateBookComponent,
+      },
+      {
+        path: 'transactions/manage',
+        component: ManageTransactionsComponent,
       },
     ],
   },
