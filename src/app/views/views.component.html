@@ -1,7 +1,9 @@
-<mat-toolbar style="height: 10%">
+<mat-toolbar>
   <button mat-button [matMenuTriggerFor]="books_menu">Books</button>
 
   <button mat-button [matMenuTriggerFor]="transaction_menu">Transactions</button>
+  <span class="spacer"></span>
+  <button mat-button [matMenuTriggerFor]="api_menu"><mat-icon fontIcon="arrow_drop_down"></mat-icon>{{selected_api}}</button>
 </mat-toolbar>
 
 <mat-menu #books_menu="matMenu">
@@ -13,5 +15,9 @@
   <button mat-menu-item routerLink="transactions/create">
     Check out books
   </button>
+</mat-menu>
+<mat-menu #api_menu="matMenu">
+  <button mat-menu-item (click)="selectApi('NodeJS')">NodeJS</button>
+  <button mat-menu-item (click)="selectApi('DotNet')">DotNet</button>
 </mat-menu>
 <router-outlet></router-outlet>
