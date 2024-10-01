@@ -17,4 +17,8 @@ export class BookService {
   createBook(book: IBook){
     return this._http.post<IBook>(`${environment.api}book`,book);
   }
+
+  getBook(id:string){
+    return this._http.get<IBook>(`${environment.api}book/${id}`);
+  }
 }

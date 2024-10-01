@@ -7,6 +7,7 @@ import { authCanActivateChildGuard } from '../guards/auth-can-activate-child.gua
 import { ManageBooksComponent } from './views/books/manage-books/manage-books.component';
 import { CreateBookComponent } from './views/books/create-book/create-book.component';
 import { ManageTransactionsComponent } from './views/transactions/manage-transactions/manage-transactions.component';
+import { CheckOutComponent } from './views/transactions/check-out/check-out.component';
 
 export const routes: Routes = [
  {
@@ -30,6 +31,10 @@ export const routes: Routes = [
       {
         path: 'transactions/manage',
         component: ManageTransactionsComponent,
+      },
+      {
+        path: 'transactions/check-out',
+        component: CheckOutComponent,
       },
     ],
   },
