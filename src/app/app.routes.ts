@@ -8,6 +8,11 @@ import { ManageBooksComponent } from './views/books/manage-books/manage-books.co
 import { CreateBookComponent } from './views/books/create-book/create-book.component';
 import { ManageTransactionsComponent } from './views/transactions/manage-transactions/manage-transactions.component';
 import { CheckOutComponent } from './views/transactions/check-out/check-out.component';
+import { ViewBookComponent } from './views/books/view-book/view-book.component';
+import { ReturnsComponent } from './views/transactions/returns/returns.component';
+import { ManageMembersComponent } from './views/members/manage-members/manage-members.component';
+import { RegisterMemberComponent } from './views/members/register-member/register-member.component';
+import { ViewMemberComponent } from './views/members/view-member/view-member.component';
 
 export const routes: Routes = [
  {
@@ -29,12 +34,32 @@ export const routes: Routes = [
         component: CreateBookComponent,
       },
       {
+        path: 'books/view/:id',
+        component: ViewBookComponent,
+      },
+      {
         path: 'transactions/manage',
         component: ManageTransactionsComponent,
       },
       {
         path: 'transactions/check-out',
         component: CheckOutComponent,
+      },
+      {
+        path: 'transactions/return',
+        component: ReturnsComponent,
+      },
+      {
+        path: 'members/manage',
+        component: ManageMembersComponent,
+      },
+      {
+        path: 'members/register',
+        component: RegisterMemberComponent,
+      },
+      {
+        path: 'members/view/:id',
+        component: ViewMemberComponent,
       },
     ],
   },
